@@ -3,27 +3,29 @@
 // };
 
 const fs = require('fs');
+const path = require('path');
 
-// fs.readFile('./README.md', 'utf8', (err, data) => {
-//   if (err) {
-//     console.log(err);
-//   } else {
-//     console.log(data);
-//   }
-// });
+const readFile = (file) => {
+  fs.readFile(file, 'utf8', (err, data) => {
+    if (err) {
+      console.log(err);
+    } else {
+      console.log(data);
+    }
+  });
+};
 
-fs.readdir('./test', (err, files) => {
-  if (err) console.log(err);
-  else {
-    console.log('Current directory filenames:');
-    files.forEach((file) => {
-      console.log(file);
-    });
-  }
-});
+const readDir = (dir) => {
+  fs.readdir(dir, (err, files) => {
+    if (err) console.log(err);
+    else {
+      console.log('Filenames with the .md extension:');
+      files.forEach((file) => {
+        if (path.extname(file) == '.md') readFile(`${dir}/${file}`);
+        console.log(`${dir}/${file}`);
+      });
+    }
+  });
+};
 
-// const regExp = /\(\d{2,3}\)\s\d{4,5}-?\d{4}/g;
-// let telefone =
-//   'o telefone é (48) 12345-6789 tratar com João, o telefone é (48) 00000-6789 tratar com Maria';
-
-// console.log(telefone.match(regExp));
+readDir('./diretório');
