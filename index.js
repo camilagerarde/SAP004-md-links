@@ -5,27 +5,48 @@
 const fs = require('fs');
 const path = require('path');
 
+const link = (file, text) => {
+  const regExpText = /(?:\[([^\]]*)\])/g;
+  const regExpLink = /(?:\([^)]*\))/g;
+  console.log(file);
+  console.log(text.match(regExpText));
+  console.log(text.match(regExpLink));
+};
+
 const readFile = (file) => {
   fs.readFile(file, 'utf8', (err, data) => {
     if (err) {
-      console.log(err);
+      console.error(err);
     } else {
-      console.log(data);
+      // console.log(data);
+      link(file, data);
     }
   });
 };
 
 const readDir = (dir) => {
   fs.readdir(dir, (err, files) => {
-    if (err) console.log(err);
+    if (err) console.error(err);
     else {
-      console.log('Filenames with the .md extension:');
+      console.log('Arquivos com extensão .md encontrados:');
       files.forEach((file) => {
-        if (path.extname(file) == '.md') readFile(`${dir}/${file}`);
-        console.log(`${dir}/${file}`);
+        if (path.extname(file) === '.md') {
+          readFile(`${dir}/${file}`);
+          console.log(file);
+        }
       });
     }
   });
 };
 
-readDir('./diretório');
+const read = (entrada) => {
+  if (path.extname(entrada) === '.md') {
+    readFile(entrada);
+  } else {
+    readDir(entrada);
+  }
+};
+
+read('./diretório');
+
+// const regExp = /(?:\[([^\]]*)\]\([^)]*\))/g;
