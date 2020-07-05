@@ -6,20 +6,22 @@ const fs = require('fs');
 const path = require('path');
 
 const link = (file, text) => {
-  const regExpText = /(?:\[([^\]]*)\])/g;
-  const regExpLink = /(?:\([^)]*\))/g;
+  const regExp = /(?:\[([^\]]*)\]\([^)]*\))/g;
+  // const regExpText = /(?:\[([^\]]*)\])/g;
+  // const regExpLink = /(?:\([^)]*\))/g;
   console.log(file);
-  console.log(text.match(regExpText));
-  console.log(text.match(regExpLink));
+  console.log(text.match(regExp));
+  // console.log(text.match(regExpText));
+  // console.log(text.match(regExpLink));
 };
 
 const readFile = (file) => {
-  fs.readFile(file, 'utf8', (err, data) => {
+  fs.readFile(file, 'utf8', (err, text) => {
     if (err) {
       console.error(err);
     } else {
-      // console.log(data);
-      link(file, data);
+      // console.log(text);
+      link(file, text);
     }
   });
 };
@@ -39,14 +41,12 @@ const readDir = (dir) => {
   });
 };
 
-const read = (entrada) => {
-  if (path.extname(entrada) === '.md') {
-    readFile(entrada);
+const read = (input) => {
+  if (path.extname(input) === '.md') {
+    readFile(input);
   } else {
-    readDir(entrada);
+    readDir(input);
   }
 };
 
-read('./diretório');
-
-// const regExp = /(?:\[([^\]]*)\]\([^)]*\))/g;
+read('./README.md');
