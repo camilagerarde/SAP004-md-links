@@ -6,13 +6,16 @@ const fs = require('fs');
 const path = require('path');
 
 const link = (file, text) => {
-  const regExp = /(?:\[([^\]]*)\]\([^)]*\))/g;
-  // const regExpText = /(?:\[([^\]]*)\])/g;
-  // const regExpLink = /(?:\([^)]*\))/g;
-  console.log(file);
-  console.log(text.match(regExp));
-  // console.log(text.match(regExpText));
-  // console.log(text.match(regExpLink));
+  const regex = /\[([^\[]+)\](\(http.*\))/gm;
+  const matches = text.match(regex);
+  const singleRegex = /\[([^\[]+)\]\((.*)\)/;
+  for (const i in matches) {
+    let result = matches[i].replace('\n', '');
+    let info = singleRegex.exec(result);
+    console.log(`${Number(i) + 1} - File: ${file}`);
+    console.log(`Link: ${info[2]}`);
+    console.log(`Text: ${info[1]}\n`);
+  }
 };
 
 const readFile = (file) => {
@@ -30,11 +33,10 @@ const readDir = (dir) => {
   fs.readdir(dir, (err, files) => {
     if (err) console.error(err);
     else {
-      console.log('Arquivos com extensão .md encontrados:');
       files.forEach((file) => {
         if (path.extname(file) === '.md') {
           readFile(`${dir}/${file}`);
-          console.log(file);
+          // console.log(file);
         }
       });
     }
@@ -49,4 +51,4 @@ const read = (input) => {
   }
 };
 
-read('./README.md');
+read('./diretório');
