@@ -5,26 +5,31 @@
 const fs = require('fs');
 const path = require('path');
 
-const link = (file, text) => {
-  const regex = /\[([^\[]+)\](\(http.*\))/gm;
-  const matches = text.match(regex);
+const link = (file, data) => {
+  const regex = /\[([^\[]+)\](\(http.*?\))/gm;
+  const arr = [];
+  const matches = data.match(regex);
+  // console.log(matches);
   const singleRegex = /\[([^\[]+)\]\((.*)\)/;
-  for (const i in matches) {
-    let result = matches[i].replace('\n', '');
-    let info = singleRegex.exec(result);
-    console.log(`${Number(i) + 1} - File: ${file}`);
-    console.log(`Link: ${info[2]}`);
-    console.log(`Text: ${info[1]}\n`);
+
+  for (const i of matches) {
+    let info = singleRegex.exec(i);
+    arr.push({
+      file: file,
+      href: info[2],
+      text: info[1].replace(/(\n)|`/g, ''),
+    });
   }
+  console.log(arr);
 };
 
 const readFile = (file) => {
-  fs.readFile(file, 'utf8', (err, text) => {
+  fs.readFile(file, 'utf8', (err, data) => {
     if (err) {
       console.error(err);
     } else {
-      // console.log(text);
-      link(file, text);
+      // console.log(data);
+      link(file, data);
     }
   });
 };
