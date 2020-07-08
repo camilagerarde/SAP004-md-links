@@ -2,9 +2,9 @@
 //   // ...
 // };
 
-const fs = require("fs");
-const path = require("path");
-const fetch = require("node-fetch");
+const fs = require('fs');
+const path = require('path');
+const fetch = require('node-fetch');
 
 const valide = (links) => {
   return fetch(links).then((res) => {
@@ -24,7 +24,7 @@ const link = (file, data) => {
         arr.push({
           file: file,
           href: info[2],
-          text: info[1].replace(/(\n)|`/g, ""),
+          text: info[1].replace(/(\n)|`/g, ''),
           valide: valide(info[2]),
         })
       );
@@ -35,7 +35,7 @@ const link = (file, data) => {
 
 const readFile = (file) => {
   return new Promise(function promiseResolve(resolve) {
-    fs.readFile(file, "utf8", (err, data) => {
+    fs.readFile(file, 'utf8', (err, data) => {
       if (err) {
         console.error(err);
       } else {
@@ -52,7 +52,7 @@ const readDir = (dir) => {
       if (err) console.error(err);
       else {
         files.forEach((file) => {
-          if (path.extname(file) === ".md") {
+          if (path.extname(file) === '.md') {
             return resolve(readFile(`${dir}/${file}`));
             // console.log(file);
           }
@@ -63,11 +63,11 @@ const readDir = (dir) => {
 };
 
 const read = (input) => {
-  if (path.extname(input) === ".md") {
+  if (path.extname(input) === '.md') {
     return readFile(input);
   } else {
     return readDir(input);
   }
 };
 
-read("./diretório");
+read('./diretório');
