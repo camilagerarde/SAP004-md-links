@@ -1,4 +1,3 @@
-[ ] Uso ES modules ([`import`](http://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/import)
 | [`export`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/export))
 
 - [ ] Diferença entre expression e statements.
