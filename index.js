@@ -6,31 +6,30 @@ const fs = require('fs');
 const path = require('path');
 const fetch = require('node-fetch');
 
-const valide = (links) => {
-  return fetch(links).then((res) => {
-    res.status, res.statusText;
+const separate = (file, links) => {
+  return new Promise(function promiseResolve(resolve) {
+    const singleRegex = /\[([^\[]+)\]\((.*)\)/;
+    const info = links.match(singleRegex);
+    fetch(info[2]).then((res) => {
+      const valide = `${res.status} ${res.statusText}`;
+      return resolve({
+        file: file,
+        href: info[2],
+        text: info[1].replace(/(\n)|`/g, ''),
+        valide: valide,
+      });
+    });
   });
 };
 
 const link = (file, data) => {
-  return new Promise(function promiseResolve(resolve) {
-    const regex = /\[([^\[]+)\](\(http.*?\))/gm;
-    const arr = [];
-    const matches = data.match(regex);
-    const singleRegex = /\[([^\[]+)\]\((.*)\)/;
-    matches.forEach((index) => {
-      const info = index.match(singleRegex);
-      return resolve(
-        arr.push({
-          file: file,
-          href: info[2],
-          text: info[1].replace(/(\n)|`/g, ''),
-          valide: valide(info[2]),
-        })
-      );
-    });
-    console.log(arr);
-  });
+  const regex = /\[([^\[]+)\](\(http.*?\))/gm;
+  const arr = [];
+  const matches = data.match(regex);
+  matches.forEach((entry) => arr.push(separate(file, entry)));
+  Promise.all(arr)
+    .then((results) => console.log(results))
+    .catch((error) => console.log(error));
 };
 
 const readFile = (file) => {
