@@ -49,18 +49,15 @@ module.exports = (paths) => {
   };
 
   const readDir = (dir) => {
-    return new Promise(function promiseResolve(resolve, reject) {
+    return new Promise(function promiseResolve(resolve) {
       fs.readdir(dir, (err, files) => {
         if (err) {
           err = 'ERROR: Invalid directory.';
           console.error(err);
         } else {
           files.forEach((file) => {
-            if (path.extname(file) === '.md') {
+            if (path.extname(file) === '.md')
               return resolve(readFile(`${dir}/${file}`));
-            } else {
-              return reject('ERROR: Files with .md extension not found.');
-            }
           });
         }
       });

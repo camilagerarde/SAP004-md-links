@@ -8,24 +8,26 @@ const mdLinks = require('./index');
 program
   .version(package.version)
   .description('Search and validate markdown links in files or directories.')
-  .option('-v, --validate [validate]', 'return validate links')
-  .option('-s, --stats [stats]', 'return status about links')
+  .option('-v, --validate [validate]', 'Returns validated links')
+  .option('-s, --stats [stats]', 'Returns link stats')
   .parse(process.argv);
 
 let path = program.args[0];
-let option = { validate: program.validate, stats: program.stats };
+let options = { validate: program.validate, stats: program.stats };
 
-mdLinks(path, option)
+mdLinks(path, options)
   .then((response) => {
-    if (option.validate) {
+    if (options.validate) {
       response.forEach((item) => {
         console.log(
           `\nFile: ${chalk.bold(item.file)} \nURL: ${chalk.magenta(
             item.href
-          )} \nText: ${item.text} \nStatus: ${chalk.cyan(item.validate)}`
+          )} \nText: ${chalk.bold(item.text)} \nStatus: ${chalk.cyan(
+            item.validate
+          )}`
         );
       });
-    } else if (option.stats) {
+    } else if (options.stats) {
       const links = response.map((i) => i.href);
       const uniqueLinks = new Set(links);
       const brokenLinks = response.filter((i) => i.validate !== '200 OK');
@@ -44,7 +46,7 @@ mdLinks(path, option)
         console.log(
           `\nFile: ${chalk.bold(item.file)} \nURL: ${chalk.magenta(
             item.href
-          )} \nText: ${item.text}`
+          )} \nText: ${chalk.bold(item.text)}`
         );
       });
     }
