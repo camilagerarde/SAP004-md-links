@@ -22,7 +22,7 @@ mdLinks(path, options)
         console.log(
           `\nFile: ${chalk.bold(item.file)} \nURL: ${chalk.magenta(
             item.href
-          )} \nText: ${chalk.bold(item.text)} \nStatus: ${chalk.cyan(
+          )} \nText: ${chalk.bold(item.text)} \nValidate: ${chalk.cyan(
             item.validate
           )}`
         );
