@@ -16,13 +16,13 @@ mdLinks(path, option)
     response.forEach((item) => {
       if (option) {
         console.log(
-          `\nFile: ${chalk.bold(item.file)} \nURL: ${chalk.green(
+          `\nFile: ${chalk.bold(item.file)} \nURL: ${chalk.magenta(
             item.href
-          )} \nText: ${item.text} \nStatus: ${chalk.blue(item.validate)}`
+          )} \nText: ${item.text} \nStatus: ${chalk.cyan(item.validate)}`
         );
       } else {
         console.log(
-          `\nFile: ${chalk.bold(item.file)} \nURL: ${chalk.green(
+          `\nFile: ${chalk.bold(item.file)} \nURL: ${chalk.magenta(
             item.href
           )} \nText: ${item.text}`
         );
