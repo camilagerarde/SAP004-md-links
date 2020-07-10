@@ -1,6 +1,6 @@
-const fs = require("fs");
-const path = require("path");
-const fetch = require("node-fetch");
+const fs = require('fs');
+const path = require('path');
+const fetch = require('node-fetch');
 
 module.exports = (paths) => {
   const separate = (file, links) => {
@@ -12,7 +12,7 @@ module.exports = (paths) => {
         return resolve({
           file: file,
           href: info[2],
-          text: info[1].replace(/(\n)|`/g, ""),
+          text: info[1].replace(/(\n)|`/g, ''),
           validate: validate,
         });
       });
@@ -37,9 +37,9 @@ module.exports = (paths) => {
 
   const readFile = (file) => {
     return new Promise(function promiseResolve(resolve) {
-      fs.readFile(file, "utf8", (err, data) => {
+      fs.readFile(file, 'utf8', (err, data) => {
         if (err) {
-          err = "Arquivo inválido!";
+          err = 'Arquivo inválido!';
           console.error(err);
         } else {
           return resolve(regex(file, data));
@@ -52,14 +52,14 @@ module.exports = (paths) => {
     return new Promise(function promiseResolve(resolve, reject) {
       fs.readdir(dir, (err, files) => {
         if (err) {
-          err = "Diretório inválido!";
+          err = 'Diretório inválido!';
           console.error(err);
         } else {
           files.forEach((file) => {
-            if (path.extname(file) === ".md") {
+            if (path.extname(file) === '.md') {
               return resolve(readFile(`${dir}/${file}`));
             } else {
-              return reject("Nenhum arquivo com extensão .md encontrado!");
+              return reject('Nenhum arquivo com extensão .md encontrado!');
             }
           });
         }
@@ -67,7 +67,7 @@ module.exports = (paths) => {
     });
   };
 
-  if (path.extname(paths) === ".md") {
+  if (path.extname(paths) === '.md') {
     return readFile(paths);
   } else {
     return readDir(paths);

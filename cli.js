@@ -1,12 +1,12 @@
 #!/usr/bin/env node
 
-const program = require("commander");
-const chalk = require("chalk");
-const package = require("./package.json");
-const mdLinks = require("./index");
+const program = require('commander');
+const chalk = require('chalk');
+const package = require('./package.json');
+const mdLinks = require('./index');
 
 program.version(package.version);
-program.option("-v, --validate [validate]").parse(process.argv);
+program.option('-v, --validate [validate]').parse(process.argv);
 
 let path = program.args[0];
 let option = program.validate;
