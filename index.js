@@ -19,7 +19,7 @@ module.exports = (paths) => {
     });
   };
 
-  const regex = (file, data) => {
+  const mdLinks = (file, data) => {
     return new Promise(function promiseResolve(resolve, reject) {
       const regex = /\[([^\[]+)\](\(http.*?\))/gm;
       const arr = [];
@@ -39,10 +39,10 @@ module.exports = (paths) => {
     return new Promise(function promiseResolve(resolve) {
       fs.readFile(file, 'utf8', (err, data) => {
         if (err) {
-          err = 'Arquivo inválido!';
+          err = 'ERROR: Invalid file.';
           console.error(err);
         } else {
-          return resolve(regex(file, data));
+          return resolve(mdLinks(file, data));
         }
       });
     });
@@ -52,14 +52,14 @@ module.exports = (paths) => {
     return new Promise(function promiseResolve(resolve, reject) {
       fs.readdir(dir, (err, files) => {
         if (err) {
-          err = 'Diretório inválido!';
+          err = 'ERROR: Invalid directory.';
           console.error(err);
         } else {
           files.forEach((file) => {
             if (path.extname(file) === '.md') {
               return resolve(readFile(`${dir}/${file}`));
             } else {
-              return reject('Nenhum arquivo com extensão .md encontrado!');
+              return reject('ERROR: Files with .md extension not found.');
             }
           });
         }
