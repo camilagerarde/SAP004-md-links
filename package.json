@@ -9,6 +9,11 @@
   ],
   "author": "Camila Cunha",
   "license": "ISC",
+  "scripts": {
+    "lint": "./node_modules/.bin/eslint .",
+    "start": "node index.js",
+    "test": "jest --coverage --verbose"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/camilagerarde/SAP004-md-links.git"
@@ -30,10 +35,5 @@
     "chalk": "^4.1.0",
     "commander": "^5.1.0",
     "node-fetch": "^2.6.0"
-  },
-  "scripts": {
-    "lint": "./node_modules/.bin/eslint .",
-    "start": "node index.js",
-    "test": "jest --coverage"
   }
 }

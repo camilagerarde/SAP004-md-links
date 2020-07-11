@@ -36,11 +36,11 @@ module.exports = (paths) => {
   };
 
   const readFile = (file) => {
-    return new Promise(function promiseResolve(resolve) {
+    return new Promise(function promiseResolve(resolve, reject) {
       fs.readFile(file, 'utf8', (err, data) => {
         if (err) {
           err = 'ERROR: Invalid file.';
-          console.error(err);
+          return reject(err);
         } else {
           return resolve(mdLinks(file, data));
         }
@@ -49,11 +49,11 @@ module.exports = (paths) => {
   };
 
   const readDir = (dir) => {
-    return new Promise(function promiseResolve(resolve) {
+    return new Promise(function promiseResolve(resolve, reject) {
       fs.readdir(dir, (err, files) => {
         if (err) {
           err = 'ERROR: Invalid directory.';
-          console.error(err);
+          return reject(err);
         } else {
           files.forEach((file) => {
             if (path.extname(file) === '.md')
