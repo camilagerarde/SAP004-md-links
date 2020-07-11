@@ -6,37 +6,37 @@ describe('mdLinks', () => {
     expect(typeof mdLinks).toBe('function');
   });
 
-  test('Retorno da função com parametro de diretório', (done) => {
-    mdLinks('./test').then((response) => {
-      expect(response).toStrictEqual(mock.resultDirectory);
+  test('Function return (directory)', (done) => {
+    mdLinks('./test').then((res) => {
+      expect(res).toStrictEqual(mock.resultDirectory);
       done();
     });
   });
 
-  test('Retorno da função com o parametro de arquivo', (done) => {
-    mdLinks('./example.md').then((response) => {
-      expect(response).toStrictEqual(mock.resultFile);
+  test('Function return (file)', (done) => {
+    mdLinks('./example.md').then((res) => {
+      expect(res).toStrictEqual(mock.resultFile);
       done();
     });
   });
 
-  test('Erro sem parametro', (done) => {
+  test('Return error (no parameter)', (done) => {
     mdLinks('').catch((err) => {
-      expect(err).toBe('ERROR: Invalid directory.');
+      expect(err).toMatch('ERROR: Invalid directory.');
       done();
     });
   });
 
-  test('Erro diretório inválido', (done) => {
+  test('Return error (Invalid directory)', (done) => {
     mdLinks('./invalid').catch((err) => {
-      expect(err).toBe('ERROR: Invalid directory.');
+      expect(err).toMatch('ERROR: Invalid directory.');
       done();
     });
   });
 
-  test('Erro arquivo inválido', (done) => {
+  test('Return error (Invalid file)', (done) => {
     mdLinks('./invalid.md').catch((err) => {
-      expect(err).toBe('ERROR: Invalid file.');
+      expect(err).toMatch('ERROR: Invalid file.');
       done();
     });
   });
