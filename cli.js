@@ -12,42 +12,49 @@ program
   .option('-s, --stats [stats]', 'Returns link stats')
   .parse(process.argv);
 
-let path = program.args[0];
-let options = { validate: program.validate, stats: program.stats };
+const path = program.args[0];
+const options = { validate: program.validate, stats: program.stats };
 
 mdLinks(path, options)
   .then((response) => {
-    if (options.validate) {
-      response.forEach((item) => {
-        console.log(
-          `\nFile: ${chalk.bold(item.file)} \nURL: ${chalk.magenta(
-            item.href
-          )} \nText: ${chalk.bold(item.text)} \nValidate: ${chalk.cyan(
-            item.validate
-          )}`
-        );
-      });
+    const links = response.map((i) => i.href);
+    const uniqueLinks = new Set(links);
+    const brokenLinks = response.filter((i) => i.validate !== '200 OK');
+    if (options.validate && options.stats) {
+      console.log(
+        chalk.bold(
+          `\nTotal links: ${chalk.cyan(
+            response.length
+          )}\nUnique links: ${chalk.cyan(
+            uniqueLinks.size
+          )}\nBroken links: ${chalk.cyan(brokenLinks.length)}\n`
+        )
+      );
     } else if (options.stats) {
-      const links = response.map((i) => i.href);
-      const uniqueLinks = new Set(links);
-      const brokenLinks = response.filter((i) => i.validate !== '200 OK');
       console.log(
         chalk.bold(
           `\nTotal links: ${chalk.magenta(
             response.length
-          )}\nUnique links: ${chalk.magenta(
-            uniqueLinks.size
-          )}\nBroken links: ${chalk.magenta(brokenLinks.length)}
-          `
+          )}\nUnique links: ${chalk.magenta(uniqueLinks.size)}\n`
         )
       );
     } else {
       response.forEach((item) => {
-        console.log(
-          `\nFile: ${chalk.bold(item.file)} \nURL: ${chalk.magenta(
-            item.href
-          )} \nText: ${chalk.bold(item.text)}`
-        );
+        if (options.validate) {
+          console.log(
+            `\nFile: ${chalk.bold(item.file)} \nURL: ${chalk.magentaBright(
+              item.href
+            )} \nText: ${chalk.bold(item.text)} \nValidate: ${chalk.cyanBright(
+              item.validate
+            )}`
+          );
+        } else {
+          console.log(
+            `\nFile: ${chalk.bold(item.file)} \nURL: ${chalk.magentaBright(
+              item.href
+            )} \nText: ${chalk.bold(item.text)}`
+          );
+        }
       });
     }
   })

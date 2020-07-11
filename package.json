@@ -23,6 +23,7 @@
   "devDependencies": {
     "eslint": "^7.4.0",
     "install": "^0.13.0",
+    "jest": "^26.1.0",
     "prettier": "2.0.5"
   },
   "dependencies": {
@@ -32,6 +33,7 @@
   },
   "scripts": {
     "lint": "./node_modules/.bin/eslint .",
-    "start": "node index.js"
+    "start": "node index.js",
+    "test": "jest --coverage"
   }
 }
