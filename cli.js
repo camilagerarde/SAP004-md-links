@@ -16,16 +16,14 @@ const path = program.args[0];
 const options = { validate: program.validate, stats: program.stats };
 
 mdLinks(path, options)
-  .then((response) => {
-    const links = response.map((i) => i.href);
-    const uniqueLinks = new Set(links);
-    const brokenLinks = response.filter((i) => i.validate !== '200 OK');
+  .then((res) => {
+    const totalLinks = res.map((item) => item.href);
+    const uniqueLinks = new Set(totalLinks);
+    const brokenLinks = res.filter((item) => item.validate !== '200 OK');
     if (options.validate && options.stats) {
       console.log(
         chalk.bold(
-          `\nTotal links: ${chalk.cyan(
-            response.length
-          )}\nUnique links: ${chalk.cyan(
+          `\nTotal links: ${chalk.cyan(res.length)}\nUnique links: ${chalk.cyan(
             uniqueLinks.size
           )}\nBroken links: ${chalk.cyan(brokenLinks.length)}\n`
         )
@@ -34,12 +32,12 @@ mdLinks(path, options)
       console.log(
         chalk.bold(
           `\nTotal links: ${chalk.magenta(
-            response.length
+            res.length
           )}\nUnique links: ${chalk.magenta(uniqueLinks.size)}\n`
         )
       );
     } else {
-      response.forEach((item) => {
+      res.forEach((item) => {
         if (options.validate) {
           console.log(
             `\nFile: ${chalk.bold(item.file)} \nURL: ${chalk.magentaBright(

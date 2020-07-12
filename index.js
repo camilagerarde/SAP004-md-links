@@ -3,16 +3,16 @@ const path = require('path');
 const fetch = require('node-fetch');
 
 module.exports = (paths) => {
-  const separate = (file, links) => {
+  const separate = (file, data) => {
     return new Promise(function promiseResolve(resolve) {
       const singleRegex = /\[([^\[]+)\]\((.*)\)/;
-      const info = links.match(singleRegex);
-      fetch(info[2]).then((res) => {
+      const item = data.match(singleRegex);
+      fetch(item[2]).then((res) => {
         const validate = `${res.status} ${res.statusText}`;
         return resolve({
           file: file,
-          href: info[2],
-          text: info[1].replace(/(\n)|`/g, ''),
+          href: item[2],
+          text: item[1].replace(/(\n)|`/g, ''),
           validate: validate,
         });
       });
@@ -24,13 +24,13 @@ module.exports = (paths) => {
       const regex = /\[([^\[]+)\](\(http.*?\))/gm;
       const arr = [];
       const matches = data.match(regex);
-      matches.forEach((index) => arr.push(separate(file, index)));
+      matches.forEach((item) => arr.push(separate(file, item)));
       Promise.all(arr)
-        .then((results) => {
-          return resolve(results);
+        .then((res) => {
+          return resolve(res);
         })
-        .catch((error) => {
-          return reject(error);
+        .catch((err) => {
+          return reject(err);
         });
     });
   };

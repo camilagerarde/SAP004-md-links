@@ -1,11 +1,12 @@
 {
   "name": "md-links",
   "version": "0.1.0",
-  "description": "Ferramenta que lê e analisa arquivos no formato Markdown, para verificar os arquivos que contenham links e mostrar algumas estatísticas.",
+  "description": "Biblioteca que lê e analisa arquivos no formato Markdown, para verificar os arquivos que contenham links e mostrar algumas estatísticas.",
   "keywords": [
     "javascript",
     "markdown",
-    "node.js"
+    "node.js",
+    "jest"
   ],
   "author": "Camila Cunha",
   "license": "ISC",
