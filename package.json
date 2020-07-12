@@ -10,8 +10,8 @@
   "author": "Camila Cunha",
   "license": "ISC",
   "scripts": {
-    "lint": "./node_modules/.bin/eslint .",
     "start": "node index.js",
+    "pretest": "eslint --ext .js ./",
     "test": "jest --coverage"
   },
   "repository": {
