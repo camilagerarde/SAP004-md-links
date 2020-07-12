@@ -76,7 +76,7 @@ Text: JavaScript
 
 ##### `--validate`
 
-Se passada a opção `--validate`, o módulo faz uma requisição HTTP para verificar se o link está ativo.
+Se incluir a opção `--validate`, o módulo faz uma requisição HTTP para verificar se o link está ativo.
 
 ```sh
 $ md-links ./example.md --validate
@@ -95,7 +95,7 @@ Validate: 404 Not Found
 
 ##### `--stats`
 
-Se passada a opção `--stats` o _output_ (saída) será um texto com estatísticas (total e únicos) sobre os links.
+Se incluir a opção `--stats` o _output_ (saída) será um texto com estatísticas (total e únicos) sobre os links.
 
 ```sh
 $ md-links ./test --stats
