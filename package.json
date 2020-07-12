@@ -29,11 +29,22 @@
     "eslint": "^7.4.0",
     "install": "^0.13.0",
     "jest": "^26.1.0",
+    "jest-nyancat-reporter": "^2.0.0",
     "prettier": "2.0.5"
   },
   "dependencies": {
     "chalk": "^4.1.0",
     "commander": "^5.1.0",
     "node-fetch": "^2.6.0"
+  },
+  "jest": {
+    "reporters": [
+      [
+        "jest-nyancat-reporter",
+        {
+          "suppressErrorReporter": false
+        }
+      ]
+    ]
   }
 }
