@@ -106,7 +106,7 @@ Unique links: 4
 
 ##### `--stats e --validate`
 
-Se combinadas as opções `--stats` e `--validate` o _output_ será um texto com estatísticas sobre os links incluindo links "quebrados".
+Se combinadas as opções `--stats` e `--validate` o _output_ será um texto com estatísticas sobre os links, incluindo links "quebrados".
 
 ```sh
 $ md-links ./test --validate --stats
