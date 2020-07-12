@@ -78,8 +78,6 @@ Text: JavaScript
 
 Se passada a opção `--validate`, o módulo faz uma requisição HTTP para verificar se o link está ativo.
 
-_Por exemplo:_
-
 ```sh
 $ md-links ./example.md --validate
 
