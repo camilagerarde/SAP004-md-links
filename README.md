@@ -36,13 +36,15 @@ Dessa forma:
 ```
 const mdLinks = require("md-links");
 
+mdLinks("./exemplo.md")
+  .then((links) => {
+    // => [{ file, href, text }]
+  })
+  .catch(console.error);
+
 mdLinks("./exemplo.md", { validate: true })
-  .then(links => {
-    if(validate) {
-      // => [{ file, href, text, validate }]
-    } else {
-      // => [{ file, href, text }]
-    }
+.then((links) => {
+    // => [{ file, href, text, validate }]
   })
   .catch(console.error);
 ```
