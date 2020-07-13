@@ -2,12 +2,22 @@
 
 [![forthebadge](https://forthebadge.com/images/badges/made-with-javascript.svg)](https://forthebadge.com)
 
+## Índice
+
+- [1. Introdução](#1-introdução)
+- [2. Instalação](#2-instalação)
+- [3. Como utilizar](#3-como-utilizar)
+- [4. Desinstalação](#4-desinstalação)
+- [5. Considerações gerais](#5-considerações-gerais)
+
+## 1. Introdução
+
 **MD-LINKS** é uma biblioteca _library_ de linha de comando (CLI) em JavaScript que usa [Node.js](https://nodejs.org/), para ler e analisar arquivos no formato `Markdown`, verificar os arquivos que contenham links e mostrar algumas estatísticas.
 
 > [Markdown](https://pt.wikipedia.org/wiki/Markdown) é uma linguagem de marcação muito popular entre os programadores.  
 > É usada em muitas plataformas que manipulam texto (GitHub, fórum, blogs e etc) e é muito comum encontrar arquivos com este formato em qualquer repositório (incluindo este `README.md` que você está lendo agora :blush:).
 
-## Instalação :computer:
+## 2. Instalação :computer:
 
 No terminal, digite o comando abaixo:  
 `$ npm install --global camilagerarde/SAP004-md-links`
@@ -15,7 +25,7 @@ No terminal, digite o comando abaixo:
 Se retornar um erro de permissão, tente usar `sudo` antes do comando, dessa forma:  
 `$ sudo npm install --global camilagerarde/SAP004-md-links`
 
-## Como utilizar :star:
+## 3. Como utilizar :star:
 
 ### JavaScript API
 
@@ -74,7 +84,7 @@ Text: JavaScript
 
 #### Options
 
-##### `--validate`
+##### `--validate ou -v`
 
 Se incluir a opção `--validate`, o módulo faz uma requisição HTTP para verificar se o link está ativo.
 
@@ -93,7 +103,7 @@ Validate: 404 Not Found
 
 ```
 
-##### `--stats`
+##### `--stats ou -s`
 
 Se incluir a opção `--stats` o _output_ (saída) será um texto com estatísticas (total e únicos) sobre os links.
 
@@ -104,7 +114,7 @@ Total links: 5
 Unique links: 4
 ```
 
-##### `--stats e --validate`
+##### `--validate --stats ou -v -s`
 
 Se combinadas as opções `--stats` e `--validate` o _output_ será um texto com estatísticas sobre os links, incluindo links "quebrados".
 
@@ -116,7 +126,7 @@ Unique links: 4
 Broken links: 1
 ```
 
-## Desinstalação :warning:
+## 4. Desinstalação :warning:
 
 Para desinstalar a biblioteca, utilize o comando:
 
@@ -131,7 +141,7 @@ Caso persista o erro utilize o comando, para verificar o nome da pasta onde foi 
 e utilize:  
 `$ npm uninstall --global <nome-da-pasta>`
 
-## Considerações gerais
+## 5. Considerações gerais
 
 ### Tecnologias e bibliotecas utilizadas
 
@@ -145,7 +155,7 @@ e utilize:
 - [eslint](https://eslint.org/)
 - [jest](https://jestjs.io/)
 
-## Autoria
+### Autoria
 
 Feito por [Camila Cunha](https://github.com/camilagerarde), para o Bootcamp da [Laboratória](https://github.com/Laboratoria).
 
