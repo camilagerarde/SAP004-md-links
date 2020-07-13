@@ -7,15 +7,29 @@ describe('mdLinks', () => {
   });
 
   test('Function return (directory)', (done) => {
-    mdLinks('./test').then((res) => {
+    mdLinks('./test', { validate: false }).then((res) => {
       expect(res).toStrictEqual(mock.resultDirectory);
       done();
     });
   });
 
   test('Function return (file)', (done) => {
-    mdLinks('./README.md').then((res) => {
+    mdLinks('./README.md', { validate: false }).then((res) => {
       expect(res).toStrictEqual(mock.resultFile);
+      done();
+    });
+  });
+
+  test('Function return (directory) with validate', (done) => {
+    mdLinks('./test', { validate: true }).then((res) => {
+      expect(res).toStrictEqual(mock.resultDirectoryValidate);
+      done();
+    });
+  });
+
+  test('Function return (file) with validate', (done) => {
+    mdLinks('./README.md', { validate: true }).then((res) => {
+      expect(res).toStrictEqual(mock.resultFileValidate);
       done();
     });
   });

@@ -3,6 +3,34 @@ const resultDirectory = [
     file: './test/example.md',
     href: 'https://pt.wikipedia.org/wiki/Markdown',
     text: 'Markdown',
+  },
+  {
+    file: './test/example.md',
+    href: 'https://developer.mozilla.org/en-US/docs/Web/JavaScript/Refere',
+    text: 'JavaScript',
+  },
+  {
+    file: './test/example.md',
+    href: 'https://nodejs.org/',
+    text: 'Node.js',
+  },
+  {
+    file: './test/example.md',
+    href: 'https://nodejs.org/',
+    text: 'Node.js',
+  },
+  {
+    file: './test/example.md',
+    href: 'https://www.npmjs.com/',
+    text: 'npm',
+  },
+];
+
+const resultDirectoryValidate = [
+  {
+    file: './test/example.md',
+    href: 'https://pt.wikipedia.org/wiki/Markdown',
+    text: 'Markdown',
     validate: '200 OK',
   },
   {
@@ -32,6 +60,86 @@ const resultDirectory = [
 ];
 
 const resultFile = [
+  {
+    file: './README.md',
+    href: 'https://forthebadge.com',
+    text:
+      'forthebadge](https://forthebadge.com/images/badges/made-with-javascript.svg)',
+  },
+  {
+    file: './README.md',
+    href: 'https://nodejs.org/',
+    text: 'Node.js',
+  },
+  {
+    file: './README.md',
+    href: 'https://pt.wikipedia.org/wiki/Markdown',
+    text: 'Markdown',
+  },
+  {
+    file: './README.md',
+    href: 'https://developer.mozilla.org/pt-BR/docs/Web/JavaScript',
+    text: 'JavaScript',
+  },
+  {
+    file: './README.md',
+    href: 'https://nodejs.org/',
+    text: 'Node.js',
+  },
+  {
+    file: './README.md',
+    href: 'https://github.com/tj/commander.js/',
+    text: 'commander',
+  },
+  {
+    file: './README.md',
+    href: 'https://github.com/chalk/chalk',
+    text: 'chalk',
+  },
+  {
+    file: './README.md',
+    href: 'https://nodejs.org/api/fs.html',
+    text: 'fs',
+  },
+  {
+    file: './README.md',
+    href: 'https://nodejs.org/api/path.html',
+    text: 'path',
+  },
+  {
+    file: './README.md',
+    href: 'https://www.npmjs.com/package/node-fetch',
+    text: 'fetch',
+  },
+  {
+    file: './README.md',
+    href: 'https://eslint.org/',
+    text: 'eslint',
+  },
+  {
+    file: './README.md',
+    href: 'https://jestjs.io/',
+    text: 'jest',
+  },
+  {
+    file: './README.md',
+    href: 'https://github.com/camilagerarde',
+    text: 'Camila Cunha',
+  },
+  {
+    file: './README.md',
+    href: 'https://github.com/Laboratoria',
+    text: 'Laboratória',
+  },
+  {
+    file: './README.md',
+    href: 'https://forthebadge.com',
+    text:
+      'forthebadge](https://forthebadge.com/images/badges/built-with-love.svg)',
+  },
+];
+
+const resultFileValidate = [
   {
     file: './README.md',
     href: 'https://forthebadge.com',
@@ -128,5 +236,7 @@ const resultFile = [
 
 module.exports = {
   resultDirectory,
+  resultDirectoryValidate,
   resultFile,
+  resultFileValidate,
 };
