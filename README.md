@@ -5,9 +5,9 @@
 ## Índice
 
 - [1. Introdução](#1-introdução)
-- [2. Instalação](#2-instalação)
-- [3. Como utilizar](#3-como-utilizar)
-- [4. Desinstalação](#4-desinstalação)
+- [2. Instalação](#2-instalação-computer)
+- [3. Como utilizar](#3-como-utilizar-star)
+- [4. Desinstalação](#4-desinstalação-warning)
 - [5. Considerações gerais](#5-considerações-gerais)
 
 ## 1. Introdução
