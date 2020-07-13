@@ -14,7 +14,7 @@ describe('mdLinks', () => {
   });
 
   test('Function return (file)', (done) => {
-    mdLinks('./example.md').then((res) => {
+    mdLinks('./README.md').then((res) => {
       expect(res).toStrictEqual(mock.resultFile);
       done();
     });
