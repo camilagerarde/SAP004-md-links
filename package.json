@@ -1,6 +1,6 @@
 {
-  "name": "md-links",
-  "version": "0.1.0",
+  "name": "@camilacunha/md-links",
+  "version": "1.0.0",
   "description": "Biblioteca que lê e analisa arquivos no formato Markdown, para verificar os arquivos que contenham links e mostrar algumas estatísticas.",
   "keywords": [
     "javascript",
@@ -36,5 +36,8 @@
     "chalk": "^4.1.0",
     "commander": "^5.1.0",
     "node-fetch": "^2.6.0"
+  },
+  "publishConfig": {
+    "access": "public"
   }
 }

@@ -34,9 +34,16 @@ describe('mdLinks', () => {
     });
   });
 
-  test('Return error (no parameter)', (done) => {
+  test('Return error (empty)', (done) => {
+    mdLinks().catch((err) => {
+      expect(err).toMatch('ERROR: Invalid path!');
+      done();
+    });
+  });
+
+  test('Return error (empty)', (done) => {
     mdLinks('').catch((err) => {
-      expect(err).toMatch('ERROR: Invalid directory.');
+      expect(err).toMatch('ERROR: Invalid path!');
       done();
     });
   });

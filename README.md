@@ -2,22 +2,16 @@
 
 [![forthebadge](https://forthebadge.com/images/badges/made-with-javascript.svg)](https://forthebadge.com)
 
-## Índice
+[Introdução](#1-introdução) | [Instalação](#2-instalação-computer) | [Como utilizar](#3-como-utilizar-star) | [Desinstalação](#4-desinstalação-warning) | [Considerações gerais](#5-considerações-gerais)
 
-- [1. Introdução](#1-introdução)
-- [2. Instalação](#2-instalação-computer)
-- [3. Como utilizar](#3-como-utilizar-star)
-- [4. Desinstalação](#4-desinstalação-warning)
-- [5. Considerações gerais](#5-considerações-gerais)
-
-## 1. Introdução
+## Introdução
 
 **MD-LINKS** é uma biblioteca _library_ de linha de comando (CLI) em JavaScript que usa [Node.js](https://nodejs.org/), para ler e analisar arquivos no formato `Markdown`, verificar os arquivos que contenham links e mostrar algumas estatísticas.
 
 > [Markdown](https://pt.wikipedia.org/wiki/Markdown) é uma linguagem de marcação muito popular entre os programadores.  
 > É usada em muitas plataformas que manipulam texto (GitHub, fórum, blogs e etc) e é muito comum encontrar arquivos com este formato em qualquer repositório (incluindo este `README.md` que você está lendo agora :blush:).
 
-## 2. Instalação :computer:
+## Instalação :computer:
 
 No terminal, digite o comando abaixo:  
 `$ npm install --global camilagerarde/SAP004-md-links`
@@ -25,7 +19,7 @@ No terminal, digite o comando abaixo:
 Se retornar um erro de permissão, tente usar `sudo` antes do comando, dessa forma:  
 `$ sudo npm install --global camilagerarde/SAP004-md-links`
 
-## 3. Como utilizar :star:
+## Como utilizar :star:
 
 ### JavaScript API
 
@@ -128,7 +122,7 @@ Unique links: 4
 Broken links: 1
 ```
 
-## 4. Desinstalação :warning:
+## Desinstalação :warning:
 
 Para desinstalar a biblioteca, utilize o comando:
 
@@ -143,7 +137,7 @@ Caso persista o erro utilize o comando, para verificar o nome da pasta onde foi 
 e utilize:  
 `$ npm uninstall --global <nome-da-pasta>`
 
-## 5. Considerações gerais
+## Considerações gerais
 
 ### Tecnologias e bibliotecas utilizadas
 

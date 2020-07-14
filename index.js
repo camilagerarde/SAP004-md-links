@@ -33,13 +33,9 @@ module.exports = (paths, options) => {
       const arr = [];
       const matches = data.match(regex);
       matches.forEach((item) => arr.push(separate(file, item, options)));
-      Promise.all(arr)
-        .then((res) => {
-          return resolve(res);
-        })
-        .catch((err) => {
-          return reject(err);
-        });
+      Promise.all(arr).then((res) => {
+        return resolve(res);
+      });
     });
   };
 
@@ -72,7 +68,10 @@ module.exports = (paths, options) => {
     });
   };
 
-  if (path.extname(paths, options) === '.md') {
+  if (!paths) {
+    const err = 'ERROR: Invalid path!';
+    return Promise.reject(err);
+  } else if (path.extname(paths, options) === '.md') {
     return readFile(paths, options);
   } else {
     return readDir(paths, options);
