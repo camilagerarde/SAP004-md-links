@@ -143,13 +143,13 @@ e utilize:
 
 - [JavaScript](https://developer.mozilla.org/pt-BR/docs/Web/JavaScript)
 - [Node.js](https://nodejs.org/)
-- [commander](https://github.com/tj/commander.js/)
-- [chalk](https://github.com/chalk/chalk)
-- [fs](https://nodejs.org/api/fs.html)
-- [path](https://nodejs.org/api/path.html)
-- [fetch](https://www.npmjs.com/package/node-fetch)
-- [eslint](https://eslint.org/)
-- [jest](https://jestjs.io/)
+- [Commander](https://github.com/tj/commander.js/)
+- [Chalk](https://github.com/chalk/chalk)
+- [Fs](https://nodejs.org/api/fs.html)
+- [Path](https://nodejs.org/api/path.html)
+- [Fetch](https://www.npmjs.com/package/node-fetch)
+- [Eslint](https://eslint.org/)
+- [Jest](https://jestjs.io/)
 
 ### Autoria
 
