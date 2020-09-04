@@ -2,7 +2,7 @@
 
 [![forthebadge](https://forthebadge.com/images/badges/made-with-javascript.svg)](https://forthebadge.com)
 
-[Introdução](#introdução) | [Instalação](#instalação-computer) | [Como utilizar](#como-utilizar-star) | [Desinstalação](#desinstalação-warning) | [Tecnologias e bibliotecas utilizadas](#Tecnologias e bibliotecas utilizadas)
+[Introdução](#introdução) | [Instalação](#instalação-octocat) | [Como utilizar](#como-utilizar-star) | [Desinstalação](#desinstalação-warning) | [Tecnologias e bibliotecas utilizadas](#tecnologias-e-bibliotecas-utilizadas)
 
 ---
 
@@ -13,7 +13,7 @@
 > [Markdown](https://pt.wikipedia.org/wiki/Markdown) é uma linguagem de marcação muito popular entre os programadores.  
 > É usada em muitas plataformas que manipulam texto (GitHub, fórum, blogs e etc) e é muito comum encontrar arquivos com este formato em qualquer repositório (incluindo este `README.md` que você está lendo agora :blush:).
 
-## Instalação :computer:
+## Instalação :octocat:
 
 No terminal, digite o comando abaixo:  
 `$ npm install --global camilagerarde/SAP004-md-links`
@@ -152,6 +152,6 @@ e utilize:
 - [Jest](https://jestjs.io/)
 
 
-**Feito por [Camila Cunha](https://github.com/camilagerarde), para o Bootcamp da [Laboratória](https://github.com/Laboratoria).**
+**Projeto realizado por [Camila Cunha](https://github.com/camilagerarde), para o Bootcamp da [Laboratória](https://github.com/Laboratoria).**
 
 [![forthebadge](https://forthebadge.com/images/badges/built-with-love.svg)](https://forthebadge.com)
