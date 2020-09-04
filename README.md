@@ -2,7 +2,9 @@
 
 [![forthebadge](https://forthebadge.com/images/badges/made-with-javascript.svg)](https://forthebadge.com)
 
-[Introdução](#1-introdução) | [Instalação](#2-instalação-computer) | [Como utilizar](#3-como-utilizar-star) | [Desinstalação](#4-desinstalação-warning) | [Considerações gerais](#5-considerações-gerais)
+[Introdução](#introdução) | [Instalação](#instalação-computer) | [Como utilizar](#como-utilizar-star) | [Desinstalação](#desinstalação-warning) | [Tecnologias e bibliotecas utilizadas](#Tecnologias e bibliotecas utilizadas)
+
+---
 
 ## Introdução
 
@@ -137,9 +139,7 @@ Caso persista o erro utilize o comando, para verificar o nome da pasta onde foi 
 e utilize:  
 `$ npm uninstall --global <nome-da-pasta>`
 
-## Considerações gerais
-
-### Tecnologias e bibliotecas utilizadas
+## Tecnologias e bibliotecas utilizadas
 
 - [JavaScript](https://developer.mozilla.org/pt-BR/docs/Web/JavaScript)
 - [Node.js](https://nodejs.org/)
@@ -151,8 +151,7 @@ e utilize:
 - [Eslint](https://eslint.org/)
 - [Jest](https://jestjs.io/)
 
-### Autoria
 
-Feito por [Camila Cunha](https://github.com/camilagerarde), para o Bootcamp da [Laboratória](https://github.com/Laboratoria).
+**Feito por [Camila Cunha](https://github.com/camilagerarde), para o Bootcamp da [Laboratória](https://github.com/Laboratoria).**
 
 [![forthebadge](https://forthebadge.com/images/badges/built-with-love.svg)](https://forthebadge.com)
