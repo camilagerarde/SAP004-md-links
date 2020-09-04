@@ -2,7 +2,7 @@
 
 [![forthebadge](https://forthebadge.com/images/badges/made-with-javascript.svg)](https://forthebadge.com)
 
-[Introdução](#introdução) | [Instalação](#instalação-octocat) | [Como utilizar](#como-utilizar-star) | [Desinstalação](#desinstalação-warning) | [Tecnologias e bibliotecas utilizadas](#tecnologias-e-bibliotecas-utilizadas)
+[Introdução](#introdução) | [Instalação](#instalação-octocat) | [Como utilizar](#como-utilizar-computer) | [Desinstalação](#desinstalação-warning) | [Tecnologias e bibliotecas utilizadas](#tecnologias-e-bibliotecas-utilizadas)
 
 ---
 
@@ -21,7 +21,7 @@ No terminal, digite o comando abaixo:
 Se retornar um erro de permissão, tente usar `sudo` antes do comando, dessa forma:  
 `$ sudo npm install --global camilagerarde/SAP004-md-links`
 
-## Como utilizar :star:
+## Como utilizar :computer:
 
 ### JavaScript API
 
