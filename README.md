@@ -2,7 +2,7 @@
 
 [![forthebadge](https://forthebadge.com/images/badges/made-with-javascript.svg)](https://forthebadge.com)
 
-[Introdução](#introdução) | [Instalação](#instalação-octocat) | [Como utilizar](#como-utilizar-computer) | [Desinstalação](#desinstalação-warning) | [Tecnologias e bibliotecas utilizadas](#tecnologias-e-bibliotecas-utilizadas)
+[Introdução](#introdução) | [Instalação](#instalação-octocat) | [Como utilizar](#como-utilizar-computer) | [Desinstalação](#desinstalação-warning) | [Tecnologias e bibliotecas utilizadas](#tecnologias-e-bibliotecas-utilizadas-star)
 
 ---
 
@@ -139,7 +139,7 @@ Caso persista o erro utilize o comando, para verificar o nome da pasta onde foi 
 e utilize:  
 `$ npm uninstall --global <nome-da-pasta>`
 
-## Tecnologias e bibliotecas utilizadas
+## Tecnologias e bibliotecas utilizadas :star:
 
 - [JavaScript](https://developer.mozilla.org/pt-BR/docs/Web/JavaScript)
 - [Node.js](https://nodejs.org/)
